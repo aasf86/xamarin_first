@@ -6,6 +6,7 @@ using System.Windows.Input;
 using System.Linq;
 using System.ComponentModel;
 using Xamarin.Forms;
+using System.Threading;
 
 namespace MVApp.ViewModels
 {
@@ -33,7 +34,7 @@ namespace MVApp.ViewModels
 
                 var result = await RemoteApi.Api.GetUsersAsync("");
 
-                Users = new ObservableCollection<Model.User>(result);
+                Users = new ObservableCollection<Model.User>(result);                
 
                 Running = false;
                 Log = "#Concluído#";

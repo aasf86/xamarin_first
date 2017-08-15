@@ -11,10 +11,11 @@ namespace MVApp
 	{
 		public App ()
 		{
-			InitializeComponent();
+			InitializeComponent();            
 
             //MainPage = new MVApp.MainPage();
-            MainPage = new MVApp.Views.Usuarios();
+            //MainPage = new MVApp.Views.Users(); //=>Sem navegação
+            MainPage = new NavigationPage(new MVApp.Views.Users());//=>Com navegação
         }
 
 		protected override void OnStart ()

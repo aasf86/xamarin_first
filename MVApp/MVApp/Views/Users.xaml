@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MVApp.Views.Usuarios">
+             x:Class="MVApp.Views.Users">
     <ContentPage.Content>
         <StackLayout Padding="0" Spacing="0">            
             <Label Text="{Binding Log}" IsVisible="False" />
             <Button Text="Carregar" Command="{Binding CarregarCommand}" />
             <ActivityIndicator IsRunning="{Binding Running}" IsVisible="{Binding Running}" Color="DeepSkyBlue" />
-            <ListView ItemsSource="{Binding Users}">                
+            <ListView ItemsSource="{Binding Users}" x:Name="ListUsers">                
                 <ListView.ItemTemplate>                    
                     <DataTemplate>                        
-                        <TextCell Text="{Binding Name}" />
+                        <TextCell Text="{Binding Name}" TextColor="Black" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>            
