@@ -3,16 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVApp.Views.Usuarios">
     <ContentPage.Content>
-        <StackLayout Padding="0" Spacing="0">
-            <Label Text="Welcome to Xamarin Forms!" />
+        <StackLayout Padding="0" Spacing="0">            
+            <Label Text="{Binding Log}" IsVisible="False" />
             <Button Text="Carregar" Command="{Binding CarregarCommand}" />
-            <ListView ItemsSource="{Binding Users}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
+            <ActivityIndicator IsRunning="{Binding Running}" IsVisible="{Binding Running}" Color="DeepSkyBlue" />
+            <ListView ItemsSource="{Binding Users}">                
+                <ListView.ItemTemplate>                    
+                    <DataTemplate>                        
                         <TextCell Text="{Binding Name}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+            </ListView>            
+        </StackLayout>        
+    </ContentPage.Content>    
 </ContentPage>
