@@ -6,9 +6,9 @@
         <StackLayout Padding="0" Spacing="0">            
             <Label Text="{Binding Log}" IsVisible="False" />
             <Button Text="Carregar" Command="{Binding CarregarCommand}" />
-            <ActivityIndicator IsRunning="{Binding Running}" IsVisible="{Binding Running}" Color="DeepSkyBlue" />
-            <ListView ItemsSource="{Binding Users}" x:Name="ListUsers">                
-                <ListView.ItemTemplate>                    
+            <!--ActivityIndicator IsRunning="{Binding Running}" IsVisible="{Binding Running}" Color="DeepSkyBlue" /-->
+            <ListView ItemsSource="{Binding Users}" x:Name="ListUsers" IsRefreshing="{Binding Running}">
+                <ListView.ItemTemplate>                     
                     <DataTemplate>                        
                         <TextCell Text="{Binding Name}" TextColor="Black" />
                     </DataTemplate>
